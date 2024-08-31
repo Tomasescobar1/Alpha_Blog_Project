@@ -23,3 +23,9 @@ Things you may want to cover:
 
 * ...
 # Alpha_Blog_Project
+
+- Article model
+
+    * Read
+    * Update
+    * Delete
