@@ -1,0 +1,35 @@
+<h1> Articles listing page </h1>
+
+<p> <strong> Article indexes: </strong> </p>
+
+<table>
+    <thead>
+    
+    <tr>
+        <th> Title </th>
+
+        <th> Description </th>
+
+        <th> Actions </th>
+    </tr>
+    
+    </thead>
+
+    <tbody>
+
+    <% @articleIndex.each do |element| %>
+    
+        <tr>
+        
+            <th> <%= element.title %> </th>
+
+            <th> <%= element.description %> </th>
+
+            <th> Placeholder </th>
+        
+        </tr>
+
+        <% end %>
+
+    </tbody>
+</table>
