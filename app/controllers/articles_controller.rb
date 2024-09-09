@@ -32,13 +32,39 @@ class ArticlesController < ApplicationController
 
         else
 
-            render 'new'
+            flash[:notice] = "Article information insufficient."
 
-            @fail = 1
+            render 'new'
 
         end
 
     end
+
+    def edit
+
+        @article = Article.find(params[:id])
+
+    end
+
+    def update
+
+        @article = Article.find(params[:id])
+
+        if @article.update(params.require(:article).permit(:title, :description))
+
+            flash[:notice] = "Article successfully updated!!"
+            
+            redirect_to article_path(@article) 
+
+        else
+
+            flash[:notice] = "Article information insufficient."
+            
+            render 'edit'
+            
+        end
+
+    end 
 
 
 end
