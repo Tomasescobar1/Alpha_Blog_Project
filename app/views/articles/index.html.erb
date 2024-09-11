@@ -11,7 +11,7 @@
 
         <th> Description </th>
 
-        <th> Actions </th>
+        <th colspan="3"> Actions </th>
     </tr>
     
     </thead>
@@ -26,7 +26,11 @@
 
             <th> <%= element.description %> </th>
 
-            <th> Placeholder </th>
+            <th> <%= link_to 'Show', article_path(element), data: {turbo_method: :show} %> </th>
+
+            <th> <%= link_to 'Edit', edit_article_path(element), data: {turbo_method: :edit} %> </th>
+
+            <th> <%= link_to 'Delete', article_path(element), data: {turbo_method: :delete}%> </th>
         
         </tr>
 
@@ -35,3 +39,5 @@
     </tbody>
 
 </table>
+
+<p> <%= link_to 'Create new article', new_article_path, data: {turbo_method: :create} %> <p/>

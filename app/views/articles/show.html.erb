@@ -3,3 +3,9 @@
 <p> <strong> Title: <%= @article.title %> </strong> </p>
 
 <p> <strong> Decription: <%= @article.description %> </strong></p>
+
+<p> <%= link_to 'Show all articles', articles_path %> </p>
+
+<p> <%= link_to 'Edit this article', edit_article_path(@article), data: {turbo_method: :edit} %> </p>
+
+<p> <%= link_to 'Delete this article', article_path(@article), data: {turbo_method: :delete} %> </p>

@@ -20,8 +20,6 @@ class ArticlesController < ApplicationController
 
     def create
 
-        @fail = 0
-
         @article = Article.new(params.require(:article).permit(:title, :description))
         
         if @article.save
@@ -66,5 +64,14 @@ class ArticlesController < ApplicationController
 
     end 
 
+    def destroy
+
+        @article = Article.find(params[:id])
+
+        @article.destroy
+
+        redirect_to articles_path
+
+    end
 
 end
